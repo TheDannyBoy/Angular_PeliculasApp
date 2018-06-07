@@ -1,0 +1,62 @@
+<!-- PELICULAS EN CARTELERA -->
+<div class="col-md-12">
+  <h1> Películas: En cartelera </h1>
+  <hr>
+
+  <div class="card-columns">
+    <div
+        class="card black"
+        style="width: 18rem;"
+        *ngFor="let pelicula of cartelera">
+      <span class="card bg-dark text-center"> {{ pelicula.title}} </span>
+      <img
+          [routerLink]="['/detalle', pelicula.id]"
+          [src]="pelicula?.poster_path | urlimagen:'http://image.tmdb.org/t/p/w300'"
+          class="card-img-top handy"
+          alt="card image cap">
+    </div>
+  </div>
+
+</div>
+
+<!-- PELICULAS POPULARES -->
+
+<div class="col-md-12">
+  <h1> Películas: Populares </h1>
+  <hr>
+
+  <div class="card-columns">
+    <div
+        class="card black"
+        style="width: 18rem;"
+        *ngFor="let pelicula of populares">
+      <span class="card bg-dark text-center"> {{ pelicula.title}} </span>
+      <img
+          [routerLink]="['/detalle', pelicula.id]"
+          [src]="pelicula?.poster_path | urlimagen:'http://image.tmdb.org/t/p/w300'"
+          class="card-img-top handy"
+          alt="card image cap">
+    </div>
+  </div>
+
+<!-- PELICULAS POPULARES PARA NIÑOS -->
+
+<div class="col-md-12">
+  <h1> Películas: Kids </h1>
+  <hr>
+
+  <div class="card-columns">
+    <div
+        class="card black"
+        style="width: 18rem;"
+        *ngFor="let pelicula of kids">
+      <span class="card bg-dark text-center"> {{ pelicula.title}} </span>
+      <img
+          [routerLink]="['/detalle', pelicula.id]"
+          [src]="pelicula?.poster_path | urlimagen:'http://image.tmdb.org/t/p/w300'"
+          class="card-img-top handy"
+          alt="card image cap">
+    </div>
+  </div>
+
+</div>

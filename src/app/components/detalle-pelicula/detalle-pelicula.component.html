@@ -1,0 +1,35 @@
+
+<!-- TODO Busqueda de la película por id -->
+
+<div class="col-md-12 black">
+
+  <div class="row">
+
+    <div class="col-md-4">
+      <img
+      [src]="pelicula?.poster_path | urlimagen:'http://image.tmdb.org/t/p/w300'"
+      class="img-fluid"
+      alt="Card image cap">
+    </div>
+    <div class="col-md-8">
+      <br>
+      <h1 class="text-center"> {{ pelicula.title}} </h1>
+      <hr>
+      <br><br>
+      <h5 class="text-justify"> {{ pelicula.overview }} </h5>
+      <br><br><br>
+      <span class="text-right" *ngIf="pelicula.release_date"> Fecha de Estreno: {{ pelicula.release_date }} </span>
+      <br><br>
+      <div class="text-justify">
+        <span *ngFor="let genero of pelicula.genres">
+          <h5 class="badge badge-primary">
+            {{ genero.name }}
+          </h5>
+          &nbsp;
+        </span>
+      </div>
+    </div>
+
+  </div>
+
+</div>
